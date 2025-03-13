@@ -1,0 +1,17 @@
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement.csproj.AssemblyReference.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\LoginWindow.g.cs
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\MainWindow.g.cs
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\App.g.cs
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement_MarkupCompile.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement_MarkupCompile.lref
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\bin\Debug\StudentManagement.exe.config
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\bin\Debug\StudentManagement.exe
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\bin\Debug\StudentManagement.pdb
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\LoginWindow.baml
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\MainWindow.baml
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement.g.resources
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Properties.Resources.resources
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement.csproj.GenerateResource.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement.csproj.CoreCompileInputs.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement.exe
+D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\obj\Debug\StudentManagement.pdb

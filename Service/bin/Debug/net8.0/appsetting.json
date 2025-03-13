@@ -1,0 +1,5 @@
+{
+    "ConnectionStrings": {
+        "DBDefault": "Data Source=DESKTOP-MHD6GEV\\SQLEXPRESS;Initial Catalog=StudentDB;User ID=sa;Password=123456;Trusted_Connection=True;Trust Server Certificate=True"
+    }
+}

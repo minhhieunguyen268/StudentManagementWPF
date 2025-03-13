@@ -1,0 +1,15 @@
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\bin\Debug\net8.0\DataAccess.dll
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\DataAccess.dll
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+D:\ki5\PRN212\fptPRN\StudentManagement\DataAccess\bin\Debug\net8.0\appsetting.json

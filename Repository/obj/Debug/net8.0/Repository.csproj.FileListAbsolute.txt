@@ -1,0 +1,16 @@
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\bin\Debug\net8.0\appsetting.json
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\bin\Debug\net8.0\Repository.deps.json
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\bin\Debug\net8.0\Repository.dll
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\bin\Debug\net8.0\Repository.pdb
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\bin\Debug\net8.0\DataAccess.dll
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\bin\Debug\net8.0\DataAccess.pdb
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.csproj.Up2Date
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.dll
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\refint\Repository.dll
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.pdb
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\ref\Repository.dll
