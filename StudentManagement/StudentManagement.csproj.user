@@ -2,12 +2,24 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="StudentManagerWindow.xaml.cs">
+    <Compile Update="View\ViewTeacher\AddNewStudent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ViewTeacher\StudentDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ViewTeacher\StudentManagerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="StudentManagerWindow.xaml">
+    <Page Update="View\ViewTeacher\AddNewStudent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewTeacher\StudentDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewTeacher\StudentManagerWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

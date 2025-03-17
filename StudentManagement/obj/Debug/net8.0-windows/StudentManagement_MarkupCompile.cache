@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\App.xaml
-4-1358836348
+6-1916893264
 
-91381874149
+11-1726267400
 251583121333
-LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;StudentManagerWindow.xaml;
+LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;View\ViewTeacher\AddNewStudent.xaml;View\ViewTeacher\StudentDetail.xaml;View\ViewTeacher\StudentManagerWindow.xaml;
 
 False
 

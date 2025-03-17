@@ -13,7 +13,7 @@
 
     <Window.Background>
 
-        <ImageBrush x:Name="img" ImageSource="C:\Users\Jackt\OneDrive\Hình ảnh\Ronaldo3.jpg" Stretch="UniformToFill"></ImageBrush>
+        <ImageBrush x:Name="img" ImageSource="/Images/Ronaldo3.jpg" Stretch="UniformToFill"></ImageBrush>
         
     </Window.Background>
 

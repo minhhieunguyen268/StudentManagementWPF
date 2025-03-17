@@ -29,7 +29,6 @@ public partial class StudentDbContext : DbContext
 
     public virtual DbSet<Timetable> Timetables { get; set; }
 
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var configuration = new ConfigurationBuilder()
@@ -40,26 +39,32 @@ public partial class StudentDbContext : DbContext
         var connectionString = configuration.GetConnectionString("DBDefault");
         optionsBuilder.UseSqlServer(connectionString);
     }
-
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Account>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC074DF9CB48");
+            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC077AC8B7BC");
 
             entity.ToTable("Account");
 
-            entity.HasIndex(e => e.Username, "UQ__Account__536C85E4BD1C20B2").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Account__536C85E409E26442").IsUnique();
 
             entity.Property(e => e.Password).HasMaxLength(255);
             entity.Property(e => e.Role).HasMaxLength(20);
             entity.Property(e => e.Username).HasMaxLength(50);
+
+            entity.HasOne(d => d.Student).WithMany(p => p.Accounts)
+                .HasForeignKey(d => d.StudentId)
+                .HasConstraintName("FK__Account__Student__534D60F1");
+
+            entity.HasOne(d => d.Teacher).WithMany(p => p.Accounts)
+                .HasForeignKey(d => d.TeacherId)
+                .HasConstraintName("FK__Account__Teacher__5441852A");
         });
 
         modelBuilder.Entity<Class>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Class__3214EC0792497CB5");
+            entity.HasKey(e => e.Id).HasName("PK__Class__3214EC07A3608F1F");
 
             entity.ToTable("Class");
 
@@ -70,32 +75,30 @@ public partial class StudentDbContext : DbContext
 
         modelBuilder.Entity<Student>(entity =>
         {
-            entity.HasKey(e => e.Mssv).HasName("PK__Student__6CB3B7F98F82E2DC");
+            entity.HasKey(e => e.StudentId).HasName("PK__Student__32C52B992C4500A6");
 
             entity.ToTable("Student");
 
-            entity.Property(e => e.Mssv)
-                .HasMaxLength(20)
-                .HasColumnName("MSSV");
+            entity.HasIndex(e => e.Mssv, "UQ__Student__6CB3B7F80E82E8C7").IsUnique();
+
             entity.Property(e => e.Address).HasMaxLength(255);
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.FullName).HasMaxLength(100);
             entity.Property(e => e.Gender).HasMaxLength(10);
-            entity.Property(e => e.PhoneNumber).HasMaxLength(15);
-            entity.Property(e => e.StudentCode).HasMaxLength(10);
-
-            entity.HasOne(d => d.Account).WithMany(p => p.Students)
-                .HasForeignKey(d => d.AccountId)
-                .HasConstraintName("FK__Student__Account__4F7CD00D");
+            entity.Property(e => e.Mssv)
+                .HasMaxLength(20)
+                .HasColumnName("MSSV");
+            entity.Property(e => e.PhoneNumber).HasMaxLength(20);
+            entity.Property(e => e.StudentCode).HasMaxLength(50);
 
             entity.HasOne(d => d.Class).WithMany(p => p.Students)
                 .HasForeignKey(d => d.ClassId)
-                .HasConstraintName("FK__Student__ClassId__4E88ABD4");
+                .HasConstraintName("FK__Student__ClassId__4CA06362");
         });
 
         modelBuilder.Entity<StudentScore>(entity =>
         {
-            entity.HasKey(e => new { e.Mssv, e.Subject }).HasName("PK__StudentS__2698AA6900341E7A");
+            entity.HasKey(e => new { e.Mssv, e.Subject }).HasName("PK__StudentS__2698AA6920B4C889");
 
             entity.Property(e => e.Mssv)
                 .HasMaxLength(20)
@@ -106,32 +109,31 @@ public partial class StudentDbContext : DbContext
             entity.Property(e => e.MidTermScore).HasColumnType("decimal(5, 2)");
 
             entity.HasOne(d => d.MssvNavigation).WithMany(p => p.StudentScores)
+                .HasPrincipalKey(p => p.Mssv)
                 .HasForeignKey(d => d.Mssv)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__StudentSco__MSSV__59FA5E80");
+                .HasConstraintName("FK__StudentSco__MSSV__5CD6CB2B");
         });
 
         modelBuilder.Entity<Teacher>(entity =>
         {
-            entity.HasKey(e => e.Msgv).HasName("PK__Teacher__6CB35172F1A33F31");
+            entity.HasKey(e => e.TeacherId).HasName("PK__Teacher__EDF25964675F0D63");
 
             entity.ToTable("Teacher");
 
+            entity.HasIndex(e => e.Msgv, "UQ__Teacher__6CB35173DFA582FB").IsUnique();
+
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.FullName).HasMaxLength(100);
             entity.Property(e => e.Msgv)
                 .HasMaxLength(20)
                 .HasColumnName("MSGV");
-            entity.Property(e => e.Email).HasMaxLength(100);
-            entity.Property(e => e.FullName).HasMaxLength(100);
             entity.Property(e => e.PhoneNumber).HasMaxLength(15);
-
-            entity.HasOne(d => d.Account).WithMany(p => p.Teachers)
-                .HasForeignKey(d => d.AccountId)
-                .HasConstraintName("FK__Teacher__Account__52593CB8");
         });
 
         modelBuilder.Entity<Timetable>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Timetabl__3214EC07388BC120");
+            entity.HasKey(e => e.Id).HasName("PK__Timetabl__3214EC07637ED7B8");
 
             entity.ToTable("Timetable");
 
@@ -146,15 +148,17 @@ public partial class StudentDbContext : DbContext
 
             entity.HasOne(d => d.Class).WithMany(p => p.Timetables)
                 .HasForeignKey(d => d.ClassId)
-                .HasConstraintName("FK__Timetable__Class__571DF1D5");
+                .HasConstraintName("FK__Timetable__Class__59FA5E80");
 
             entity.HasOne(d => d.MsgvNavigation).WithMany(p => p.Timetables)
+                .HasPrincipalKey(p => p.Msgv)
                 .HasForeignKey(d => d.Msgv)
-                .HasConstraintName("FK__Timetable__MSGV__5629CD9C");
+                .HasConstraintName("FK__Timetable__MSGV__59063A47");
 
             entity.HasOne(d => d.MssvNavigation).WithMany(p => p.Timetables)
+                .HasPrincipalKey(p => p.Mssv)
                 .HasForeignKey(d => d.Mssv)
-                .HasConstraintName("FK__Timetable__MSSV__5535A963");
+                .HasConstraintName("FK__Timetable__MSSV__5812160E");
         });
 
         OnModelCreatingPartial(modelBuilder);

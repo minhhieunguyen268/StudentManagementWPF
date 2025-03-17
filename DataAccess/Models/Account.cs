@@ -5,6 +5,7 @@ namespace DataAccess.Models;
 
 public partial class Account
 {
+    public Account() { }
     public int Id { get; set; }
 
     public string Username { get; set; } = null!;
@@ -13,16 +14,21 @@ public partial class Account
 
     public string Role { get; set; } = null!;
 
-    public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+    public int? StudentId { get; set; }
 
-    public virtual ICollection<Teacher> Teachers { get; set; } = new List<Teacher>();
+    public int? TeacherId { get; set; }
 
-    public Account(string username, string password, string Role)
+    public virtual Student? Student { get; set; }
+
+    public virtual Teacher? Teacher { get; set; }
+
+    public Account(string username, string password, string role, int studentId)
     {
 
         Username = username;
         Password = password;
-        this.Role = Role;
-
+        this.Role = role;
+        StudentId = studentId;
     }
+
 }

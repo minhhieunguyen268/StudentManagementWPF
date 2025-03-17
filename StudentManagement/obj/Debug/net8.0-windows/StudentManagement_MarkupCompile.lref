@@ -3,5 +3,7 @@
 FD:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\LoginWindow.xaml;;
 FD:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\MainWindow.xaml;;
 FD:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\RegisterWindow.xaml;;
-FD:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\StudentManagerWindow.xaml;;
+FD:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\View\ViewTeacher\AddNewStudent.xaml;;
+FD:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\View\ViewTeacher\StudentDetail.xaml;;
+FD:\ki5\PRN212\fptPRN\StudentManagement\StudentManagement\View\ViewTeacher\StudentManagerWindow.xaml;;
 

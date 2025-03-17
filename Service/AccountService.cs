@@ -46,7 +46,6 @@ namespace Service
 
         }
 
-
         public Response<String> Register(Account account)
         {
             Response<String> response = new Response<String>();
@@ -66,6 +65,11 @@ namespace Service
                 response.IsSuccess = true;
             }
             return response;
+        }
+
+        public Account GetAccountByStudentId(int StudentId)
+        {
+            return _repo.GetAccountByStudentId(StudentId);
         }
 
     }

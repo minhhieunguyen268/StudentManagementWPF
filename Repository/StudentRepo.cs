@@ -37,55 +37,60 @@ namespace Repository
 
             if (finded != null)
             {
-                _context.Entry(finded).CurrentValues.SetValues(student);
+                finded.FullName = student.FullName;
+                finded.DateOfBirth = student.DateOfBirth;
+                finded.Gender = student.Gender;
+                finded.Address = student.Address;
+                finded.PhoneNumber = student.PhoneNumber;
+                finded.Email = student.Email;
+                finded.ClassId = student.ClassId;
+                finded.StudentCode = student.StudentCode;
             }
             else
             {
-                _context.Students.Update(student);
+                throw new Exception("Student not found.");
             }
 
             _context.SaveChanges();
         }
 
+        public Student GetStudentByMssv(string Mssv)
+        {
+            return _context.Students.FirstOrDefault(x => x.Mssv == Mssv);
+        }
 
-        //public void Delete(int mssv)
-        //{
-        //    var finded = _context.Students.FirstOrDefault(x => x.Mssv == mssv);
-
-        //    if (finded == null)
-        //    {
-        //        Console.WriteLine($"no student ID found: {mssv}");
-        //        return;
-        //    }
-        //    _context.Students.Remove(finded);
-        //    _context.SaveChanges();
-        //}
-        //public StudentDTO SearchByStudentID(int mssv)
-        //{
-
-        //    var res = _context.Students.FirstOrDefault(s => s.Mssv == mssv);
-        //    if (res == null)
-        //    {
-        //        return new StudentDTO();
-        //    }
-        //    return TranferModelToDTO.MappedStudentToDTO(res);
-        //}
+        public bool AddStudent(Student student)
+        {
+            try
+            {
+                _context.Students.Add(student);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi hoặc thông báo lỗi
+                return false;
+            }
+        }
 
 
-        //public List<StudentDTO> SearchByName(string name)
-        //{
+        public bool Delete(string mssv)
+        {
+            var finded = _context.Students.FirstOrDefault(x => x.Mssv == mssv);
 
-        //    List<StudentDTO> listSearch = new List<StudentDTO>();
+            if (finded == null)
+            {
+                Console.WriteLine($"No student found with ID: {mssv}");
+                return false;
+            }
 
-        //    foreach (var student in GetAll())
-        //    {
-        //        if (student.Fullname.Contains(name))
-        //        {
-        //            listSearch.Add(student);
-        //        }
-        //    }
+            _context.Students.Remove(finded);
+            _context.SaveChanges();
+            return true;
+        }
 
-        //    return listSearch;
-        //}
+        
+
     }
 }

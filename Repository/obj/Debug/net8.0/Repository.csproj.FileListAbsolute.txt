@@ -9,6 +9,7 @@ D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.Ge
 D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
 D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
 D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
+D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.sourcelink.json
 D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.csproj.Up2Date
 D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\Repository.dll
 D:\ki5\PRN212\fptPRN\StudentManagement\Repository\obj\Debug\net8.0\refint\Repository.dll

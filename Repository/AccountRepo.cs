@@ -18,7 +18,7 @@ namespace Repository
             _context = new StudentDbContext();
         }
 
-        public Account GetAccount(string username, string password)
+        public Account? GetAccount(string username, string password)
         {
             var finded = _context.Accounts.FirstOrDefault(a => a.Username == username && a.Password == password);
 
@@ -29,6 +29,8 @@ namespace Repository
 
             return null;
         }
+
+
 
 
         public bool AddAccount(Account account)
@@ -42,6 +44,11 @@ namespace Repository
             _context.Accounts.Add(account);
             _context.SaveChanges();
             return true;
+        }
+
+        public Account GetAccountByStudentId(int studentId)
+        {
+            return _context.Accounts.FirstOrDefault(a => a.StudentId == studentId);
         }
     }
 }

@@ -29,27 +29,53 @@ namespace StudentManagement
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            var mssv = txtMSSV.Text;
             var username = txtUsername.Text;
             var password = txtPassword.Password;
             var cfpassword = txtConfirmPassword.Password;
 
-            if (password.Equals(cfpassword) == false)
+            if(string.IsNullOrEmpty(mssv))
+            {
+                MessageBox.Show("Enter mssv to register", "Error to Register", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            else if (password.Equals(cfpassword) == false)
             {
                 MessageBox.Show("Confirm password not same Password!", "Error to Register", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                AccountService accountService = new AccountService();
-                var check = accountService.Register(new DataAccess.Models.Account(username, password, "student"));
-                if (check.IsSuccess == true)
+                StudentService _studentService = new StudentService();
+                AccountService _accountService = new AccountService();
+                var student = _studentService.GetStudentByMssv(mssv);
+
+
+
+                if (student == null)
                 {
-                    LoginWindow loginWindow = new LoginWindow();
-                    this.Close();
-                    loginWindow.Show();
+                    MessageBox.Show("Student does not exist in the system!", "Error to Register", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
-                    MessageBox.Show(check.Value, "Error to Register", MessageBoxButton.OK, MessageBoxImage.Error);
+                    var existingAccount = _accountService.GetAccountByStudentId(student.StudentId);
+                    if (existingAccount != null)
+                    {
+                        MessageBox.Show("Student already has an account!", "Error to Register", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        var check = _accountService.Register(new DataAccess.Models.Account(username, password, "student", student.StudentId));
+                        if (check.IsSuccess == true)
+                        {
+                            LoginWindow loginWindow = new LoginWindow();
+                            this.Close();
+                            loginWindow.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show(check.Value, "Error to Register", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
                 }
 
             }

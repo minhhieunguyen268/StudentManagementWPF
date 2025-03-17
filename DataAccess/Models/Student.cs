@@ -5,13 +5,15 @@ namespace DataAccess.Models;
 
 public partial class Student
 {
+    public int StudentId { get; set; }
+
     public string Mssv { get; set; } = null!;
 
     public string FullName { get; set; } = null!;
 
-    public DateOnly? DateOfBirth { get; set; }
+    public DateOnly DateOfBirth { get; set; }
 
-    public string? Gender { get; set; }
+    public string Gender { get; set; } = null!;
 
     public string? Address { get; set; }
 
@@ -23,9 +25,7 @@ public partial class Student
 
     public string? StudentCode { get; set; }
 
-    public int? AccountId { get; set; }
-
-    public virtual Account? Account { get; set; }
+    public virtual ICollection<Account> Accounts { get; set; } = new List<Account>();
 
     public virtual Class? Class { get; set; }
 

@@ -10,7 +10,7 @@
 
     <Window.Background>
 
-        <ImageBrush x:Name="img" ImageSource="C:\Users\Jackt\OneDrive\Hình ảnh\mau-background-dep-41.jpg" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Name="img" ImageSource="/Images/register.jpg" Stretch="Fill"></ImageBrush>
 
     </Window.Background>
 
@@ -18,6 +18,9 @@
     <Grid Margin="20" Background="Transparent">
         <StackPanel VerticalAlignment="Center" Height="420" Margin="248,0,248,0">
             <TextBlock Text="Register" Foreground="#FF6DC2EB" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Mssv:" Margin="0,5" Foreground="#FFF6F6F6"/>
+            <TextBox x:Name="txtMSSV" Height="30" Margin="0,0,0,10"/>
 
             <TextBlock Text="Username:" Margin="0,5" Foreground="#FFF6F6F6"/>
             <TextBox x:Name="txtUsername" Height="30" Margin="0,0,0,10"/>
@@ -33,12 +36,7 @@
 
             <TextBlock x:Name="txtError" Foreground="Red" TextWrapping="Wrap" 
                    Margin="0,10" TextAlignment="Center"/>
-
-            <TextBlock>
-            <Hyperlink x:Name="lnkLogin" Click="lnkLogin_Click" Foreground="#FF9CC4ED">
-                Already have an account? Login here
-            </Hyperlink>
-            </TextBlock>
+            <TextBlock><Hyperlink x:Name="lnkLogin" Click="lnkLogin_Click" Foreground="#FF9CC4ED"><Run Text="Already have an account? Login here"/></Hyperlink></TextBlock>
         </StackPanel>
     </Grid>
 </Window>

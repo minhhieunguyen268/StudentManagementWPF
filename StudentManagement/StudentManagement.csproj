@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
@@ -13,5 +13,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Service\Service.csproj" />
 	</ItemGroup>
-
+	<ItemGroup>
+		<Resource Include="Images\imagesAvt.jpg" />
+	</ItemGroup>
 </Project>
